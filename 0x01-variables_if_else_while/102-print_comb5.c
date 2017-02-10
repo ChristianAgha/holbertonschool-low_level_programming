@@ -11,12 +11,12 @@ int main(void)
 
 	while (one <= 99)
 	{
-		while (two <= 99 && two != one)
+		while (two <= 99)
 		{
-			putchar(one / 10 % 10 + '0');
+			putchar(one / 10 + '0');
 			putchar(one % 10 + '0');
 			putchar(' ');
-			putchar(two / 10 % 10 + '0');
+			putchar(two / 10 + '0');
 			putchar(two % 10 + '0');
 			if (one < 98)
 			{
