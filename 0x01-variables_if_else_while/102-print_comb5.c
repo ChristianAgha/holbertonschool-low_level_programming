@@ -20,8 +20,11 @@ int main(void)
 			putchar(' ');
 			putchar(two / 10 % 10 + '0');
 			putchar(two % 10 + '0');
-			putchar(',');
-			putchar(' ');
+			if (one < 98)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 			two++;
 		}
 		one++;
