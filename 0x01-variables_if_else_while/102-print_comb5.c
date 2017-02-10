@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 /**
  * main - Entry point
@@ -31,6 +29,5 @@ int main(void)
 		two = one + 1;
 	}
 	putchar('\n');
-
 	return (0);
 }
