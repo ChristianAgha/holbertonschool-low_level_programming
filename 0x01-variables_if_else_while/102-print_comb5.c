@@ -1,0 +1,33 @@
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int one = 0;
+	int two = 1;
+
+	while (one <= 99)
+	{
+		while (two <= 99 && two != one)
+		{
+			putchar(one / 10 % 10 + '0');
+			putchar(one % 10 + '0');
+			putchar(' ');
+			putchar(two / 10 % 10 + '0');
+			putchar(two % 10 + '0');
+			putchar(',');
+			putchar(' ');
+			two++;
+		}
+		one++;
+		two = one + 1;
+	}
+	putchar('\n');
+
+	return (0);
+}
