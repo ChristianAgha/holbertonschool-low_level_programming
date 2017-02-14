@@ -8,8 +8,10 @@
  */
 int add(int a, int b)
 {
-	unsigned int r;
+	long c, d, r;
 
-	r = a + b;
+	c = a;
+	d = b;
+	r = c + d;
 	return (r);
 }
