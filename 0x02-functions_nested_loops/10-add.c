@@ -11,7 +11,7 @@
 
 int add(int a, int b)
 {
-	long r;
+	unsigned int r;
 
 	r = a + b;
 	return (r);
