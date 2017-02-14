@@ -9,11 +9,15 @@
 int add(int a, int b)
 {
 	long r;
-	unsigned long u;
+	unsigned long int first;
+	unsigned long int second;
+	unsigned long int  u;
 
 	if (a >= 0 && b >= 0)
 	{
-		u = a + b;
+		first = (unsigned long int) a;
+		second = (unsigned long int) b;
+		u = first + second;
 		return (u);
 	}
 	else
