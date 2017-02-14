@@ -8,10 +8,17 @@
  */
 int add(int a, int b)
 {
-	long c, d, r;
+	long r;
+	unsigned long u;
 
-	c = a;
-	d = b;
-	r = c + d;
-	return (r);
+	if (a >= 0 && b >= 0)
+	{
+		u = a + b;
+		return (u);
+	}
+	else
+	{
+		r = a + b;
+		return (r);
+	}
 }
