@@ -8,9 +8,10 @@ int main(void)
 {
 	unsigned long first = 1, second = 2, f, a;
 
-	printf("1, 2, ");
 	for (a = 1; a <= 49; a++)
 	{
+		if (a == 1)
+			printf("1, 2, ");
 		f = first + second;
 		printf("%lu", f);
 		if (a < 49)
