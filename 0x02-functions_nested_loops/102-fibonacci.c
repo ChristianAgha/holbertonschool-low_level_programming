@@ -2,10 +2,7 @@
 #include <stdlib.h>
 /**
  * main - prints the first 50 Fibonacci numbers
- * first: initial number
- * second: next number
- * f: Fibonacci number
- * Return: void
+ * Return: 0
  */
 int main(void)
 {
