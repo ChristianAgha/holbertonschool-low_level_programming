@@ -14,9 +14,9 @@ int main(void)
 		if (a == 1)
 			printf("1, 2, ");
 		ar1 = (n1 + n2);
-	       	printf("%lu, ", ar1);
-       		n1 = n2;
-       		n2 = ar1;
+		printf("%lu, ", ar1);
+		n1 = n2;
+		n2 = ar1;
 	}
 	frp1 = n1 / 100; frp2 = n2 / 100; secp1 = n1 % 100; secp2 = n2 % 100;
 	for (b = 1; b <= 6; b++)
