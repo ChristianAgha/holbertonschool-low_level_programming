@@ -3,7 +3,6 @@
  * main - prints the first 98 Fibonacci numbers
  * Return: 0
  */
-
 int main(void)
 {
 	unsigned long frp1, frp2, ar1, n1 = 1, n2 = 2;
@@ -18,7 +17,10 @@ int main(void)
 		n1 = n2;
 		n2 = ar1;
 	}
-	frp1 = n1 / 100; frp2 = n2 / 100; secp1 = n1 % 100; secp2 = n2 % 100;
+	frp1 = n1 / 100;
+	frp2 = n2 / 100;
+	secp1 = n1 % 100;
+	secp2 = n2 % 100;
 	for (b = 1; b <= 6; b++)
 	{
 		ar1 = frp1 + frp2;
