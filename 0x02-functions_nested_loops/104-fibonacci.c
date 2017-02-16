@@ -9,17 +9,14 @@ int main(void)
 	unsigned long frp1, frp2, ar1, n1 = 1, n2 = 2;
 	int a, b, ar2, secp1, secp2;
 
-	for (a = 1; a <= 96; a++)
+	for (a = 1; a <= 90; a++)
 	{
 		if (a == 1)
 			printf("1, 2, ");
-		if (a <= 90)
-		{
-			ar1 = (n1 + n2);
-			printf("%lu, ", ar1);
-			n1 = n2;
-			n2 = ar1;
-		}
+		ar1 = (n1 + n2);
+	       	printf("%lu, ", ar1);
+       		n1 = n2;
+       		n2 = ar1;
 	}
 	frp1 = n1 / 100; frp2 = n2 / 100; secp1 = n1 % 100; secp2 = n2 % 100;
 	for (b = 1; b <= 6; b++)
