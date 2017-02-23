@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * strcmp - a function that compares two strings
+ * _strcmp - a function that compares two strings
  * @s1: first string to compare
  * @s2: second string to compare
  * Return: an integer result of the comparison
