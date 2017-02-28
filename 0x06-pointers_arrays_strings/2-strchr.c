@@ -10,7 +10,7 @@ char *_strchr(char *s, char c)
 {
 	unsigned int i;
 
-	for (i = 0; i < (sizeof(s) / sizeof(char)); i++)
+	for (i = 0; i <= (sizeof(s) / sizeof(char)); i++)
 	{
 		if (s[i] == c)
 		{
