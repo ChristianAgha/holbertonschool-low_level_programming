@@ -7,13 +7,13 @@
  */
 int isprime(int n, int root)
 {
-       	if (n % root == 0 || n < 2)
-       		return (0);
+	if (n % root == 0 || n < 2)
+		return (0);
 	else if (root == (n - 1))
-	       	return (1);
-       	else if (n > root)
-       		return (isprime(n, root + 1));
-       	return (1);
+		return (1);
+	else if (n > root)
+		return (isprime(n, root + 1));
+	return (1);
 }
 /**
  * is_prime_number - tells if number is prime
