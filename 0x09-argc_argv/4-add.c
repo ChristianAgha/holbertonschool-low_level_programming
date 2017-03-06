@@ -16,22 +16,19 @@ int main(int argc, char **argv)
 		printf("0\n");
 		return (0);
 	}
-	else
+	for (i = 1; i < argc; i++)
 	{
-		for (i = 1; i < argc; i++)
-		{
-			arglen = strlen(argv[i]);
+		arglen = strlen(argv[i]);
 
-			for (j = 0; j < arglen; j++)
+		for (j = 0; j < arglen; j++)
+		{
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
-				if (argv[i][j] < '0' || argv[i][j] > '9')
-				{
-					printf("Error\n");
-					return (1);
-				}
+				printf("Error\n");
+				return (1);
 			}
-			sum += atoi(argv[i]);
 		}
+		sum += atoi(argv[i]);
 	}
 
 	printf("%d\n", sum);
