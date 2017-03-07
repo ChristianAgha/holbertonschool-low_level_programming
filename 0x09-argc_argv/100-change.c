@@ -14,6 +14,11 @@ int main(int argc, char **argv)
 	quarter = dime = five = two = one = add = 0;
 	num = atoi(argv[1]);
 
+	if (num < 0)
+	{
+		printf("0\n");
+		return (1);
+	}
 	if (argc != 2)
 	{
 		printf("Error\n");
