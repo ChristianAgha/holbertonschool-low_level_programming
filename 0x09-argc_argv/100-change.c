@@ -12,6 +12,13 @@ int main(int argc, char **argv)
 	int quarter, dime, five, two, one, num, add;
 
 	quarter = dime = five = two = one = add = 0;
+
+	if (argc < 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
 	num = atoi(argv[1]);
 
 	if (num < 0)
@@ -19,12 +26,6 @@ int main(int argc, char **argv)
 		printf("0\n");
 		return (1);
 	}
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-
 	quarter = num / 25;
 	num = num % 25;
 	dime = num / 10;
