@@ -24,10 +24,10 @@ char *argstostr(int ac, char **av)
 	}
 	avlen += ac + 1; /* to account for newlines and null char*/
 
-	newstr = malloc(sizeof(char) * avlen);
-
+	newstr = (char *) malloc(sizeof(char) * avlen);
 	if (newstr == NULL)
 		return (NULL);
+
 	for (i = 0; av[i] != '\0'; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
