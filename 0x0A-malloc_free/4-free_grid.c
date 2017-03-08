@@ -2,15 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * alloc_grid - a function that returns a pointer to a 2 dimensional
- *  array of integers
- * @width: width  of array
- * @height: height of array
- * Return: pointer to a 2 dimensional array or NULL
+ * free_grid - frees a 2 dimensional grid
+ * @grid: grid to be freed
+ * @height: height of grid
+ * Return: void
  */
 void free_grid(int **grid, int height)
 {
 	int i;
+
 	for (i = 0; i < height; i++)
 	{
 		free(grid[i]);
