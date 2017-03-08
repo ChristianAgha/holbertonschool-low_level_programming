@@ -10,7 +10,7 @@
 char *argstostr(int ac, char **av)
 {
 	int i, j, avlen, nstrlen;
-	char *newstr;
+	char *nstr;
 
 	avlen = nstrlen = 0;
 
@@ -24,20 +24,23 @@ char *argstostr(int ac, char **av)
 	}
 	avlen += ac + 1; /* to account for newlines and null char*/
 
-	newstr = (char *) malloc(sizeof(char) * avlen);
-	if (newstr == NULL)
+	nstr = (char *) malloc(sizeof(char) * avlen);
+	if (nstr == NULL)
+	{
+		free(nstr);
 		return (NULL);
+	}
 
 	for (i = 0; av[i] != '\0'; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			newstr[nstrlen] = av[i][j];
+			nstr[nstrlen] = av[i][j];
 			nstrlen++;
 		}
-		newstr[nstrlen] = '\n';
+		nstr[nstrlen] = '\n';
 		nstrlen++;
 	}
-	newstr[nstrlen] = '\0';
-	return (newstr);
+	nstr[nstrlen] = '\0';
+	return (nstr);
 }
