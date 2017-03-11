@@ -10,53 +10,48 @@
 int main(int argc, char **argv)
 {
 	char *num1, *num2;
-	int lenofstrs;
+	int i, j, m, k, b, c, l, lenofstrs;
+	int *res, *p;
 
 	if (!(checkinput(argc, argv)))
 	{
 		num1 = argv[1];
 		num2 = argv[2];
 		lenofstrs = _strlen(num1) + _strlen(num2) + 1;
-		multiply(num1, num2, lenofstrs);
+		res = (int *)_calloc(lenofstrs, sizeof(int));
+		for (i = (_strlen(num2) - 1); i >= 0; --i)
+		{
+			p = (int *)_calloc(lenofstrs, sizeof(int));
+			for (j = (_strlen(num1) - 1), k = 0; j >= 0; j--, k++)
+			{
+				b = (num1[j] - 48) * (num2[i] - 48);
+				b = *(p + k) + b;
+				*(p + k) = b % 10;
+				*(p + k + 1) = b / 10;
+			}
+			while (*(p + k) == 0)
+				--k;
+			for (m = (_strlen(num2) - 1) - i, l = 0; l <= k; l++, m++)
+			{
+				c = *(res + m) + *(p + l);
+				*(res + m) = c % 10;
+				*(res + m + 1) = *(res + m + 1) + (c / 10);
+			}
+			while (*(res + m) == 0)
+				--m;
+			free(p);
+		}
+		if (*(res + m) == 0)
+			--m;
+		if (res == NULL)
+			exit(98);
+		for (i = m; i >= 0; i--)
+		{
+			printf("%d", *(res + i));
+		}
+		printf("\n");
 	}
 	return (0);
-}
-int *multiply(char *num1, char *num2, int lenofstrs)
-{
-	int i, j, m, k, b, c, l;
-	int *res, *p;
-
-	res = (int *)_calloc(lenofstrs, sizeof(int));
-	for (i = (_strlen(num2) - 1); i >= 0; --i)
-	{
-		p = (int *)_calloc(lenofstrs, sizeof(int));
-		for (j = (_strlen(num1) - 1), k = 0; j >= 0; j--, k++)
-		{
-			b = (num1[j] - 48) * (num2[i] - 48);
-			b = *(p + k) + b;
-			*(p + k) = b % 10;
-			*(p + k + 1) = b / 10;
-		}
-		while (*(p + k) == 0)
-			--k;
-		for (m = (_strlen(num2) - 1) - i, l = 0; l <= k; l++, m++)
-		{
-			c = *(res + m) + *(p + l);
-			*(res + m) = c % 10;
-			*(res + m + 1) = *(res + m + 1) + (c / 10);
-		}
-		while (*(res + m) == 0)
-			--m;
-		free(p);
-	}
-	if (*(res + m) == 0)
-		--m;
-	if (res == NULL)
-		exit(98);
-	for (i = m; i >= 0; i--)
-		printf("%d", *(res + i));
-	printf("\n");
-	return (res);
 }
 /**
  * checkinput - check the input format
