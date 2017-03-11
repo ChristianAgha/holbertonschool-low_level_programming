@@ -15,8 +15,7 @@ int main(int argc, char **argv)
 
 	if (!(checkinput(argc, argv)))
 	{
-		num1 = argv[1];
-		num2 = argv[2];
+		num1 = argv[1]; num2 = argv[2];
 		lenofstrs = _strlen(num1) + _strlen(num2) + 1;
 		res = (int *)_calloc(lenofstrs, sizeof(int));
 		for (i = (_strlen(num2) - 1); i >= 0; --i)
@@ -46,9 +45,7 @@ int main(int argc, char **argv)
 		if (res == NULL)
 			exit(98);
 		for (i = m; i >= 0; i--)
-		{
 			printf("%d", *(res + i));
-		}
 		printf("\n");
 	}
 	return (0);
@@ -66,7 +63,7 @@ int checkinput(int argc, char **argv)
 	if (argc != 3)
 	{
 		printf("Error\n");
-		return (1);
+		exit(98);
 	}
 	for (i = 1; i < argc; i++)
 	{
@@ -77,7 +74,7 @@ int checkinput(int argc, char **argv)
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("Error\n");
-				return (1);
+				return (98);
 			}
 		}
 	}
