@@ -43,6 +43,8 @@ int main(int argc, char **argv)
 		}
 		if (*(res + m) == 0)
 			--m;
+		if (res == NULL)
+			exit(98);
 		for (i = m; i >= 0; i--)
 			printf("%d", *(res + i));
 		printf("\n");
