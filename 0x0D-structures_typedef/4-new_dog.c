@@ -22,9 +22,11 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 /**
- * print_dog - prints dog info
- * @d: variable of dog struct
- * Return: void
+ * new_dog - creates a struct of type dog
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
+ * Return: returns pointer to istance of type dog_t
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
