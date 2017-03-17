@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	if (num2 == 0 && (*argv[2] == '%' || *argv[2] == '/'))
 	{
 		printf("Error\n");
-		return (100);
+		exit(100);
 	}
 
 	f = get_op_func(argv[2]);
