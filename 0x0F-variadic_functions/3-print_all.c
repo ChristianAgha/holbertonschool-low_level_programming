@@ -2,6 +2,46 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
+void prnt_char(va_list va_chr);
+void prnt_int(va_list va_int);
+void prnt_float(va_list va_float);
+void prnt_string(va_list va_string);
+/**
+ * print_all - prints all the inputs it's given
+ * @format: a string that holds the formats key for the inputs
+ * Return: void
+ */
+void print_all(const char * const format, ...)
+{
+	unsigned int i, j;
+	va_list valist;
+	arg_t frmt[] = {
+		{"c", prnt_char},
+		{"i", prnt_int},
+		{"f", prnt_float},
+		{"s", prnt_string},
+		{NULL, NULL}
+	};
+	va_start(valist, format);
+	i = 0;
+
+	while (format && format[i])
+	{
+		j = 0;
+		while (frmt[j].type != NULL)
+		{
+			if (frmt[j].type[0] == format[i])
+			{
+				frmt[j].f(valist);
+				if (format[i + 1] != '\0')
+					printf(", ");
+			}
+			j++;
+		}
+		i++;
+	}
+	printf("\n");
+}
 /**
  * prnt_char - prints the char list memeber
  * @va_chr: input list char
@@ -30,10 +70,10 @@ void prnt_float(va_list va_float)
 	printf("%f", va_arg(va_float, double));
 }
 /**
-  * prnt_string - prints the string list memeber
-  * @va_string: input string
-  * Return: void
-  */
+ * prnt_string - prints the string list memeber
+ * @va_string: input string
+ * Return: void
+ */
 void prnt_string(va_list va_string)
 {
 	char *string;
@@ -42,41 +82,4 @@ void prnt_string(va_list va_string)
 	if (string == NULL)
 		string = "(nil)";
 	printf("%s", string);
-}
-/**
- * print_all - prints all the inputs it's given
- * @format: a string that holds the formats key for the inputs
- * Return: void
- */
-void print_all(const char * const format, ...)
-{
-	unsigned int i, j;
-	va_list valist;
-	arg_t frmt[] = {
-		{"c", prnt_char},
-		{"i", prnt_int},
-		{"f", prnt_float},
-		{"s", prnt_string},
-		{NULL, NULL}
-	};
-
-	va_start(valist, format);
-	i = 0;
-
-	while (format && format[i])
-	{
-		j = 0;
-		while (frmt[j].type != NULL)
-		{
-			if (*frmt[j].type == format[i])
-			{
-				frmt[j].f(valist);
-				if (format[i + 1] != '\0')
-					printf(", ");
-			}
-			j++;
-		}
-		i++;
-	}
-	printf("\n");
 }

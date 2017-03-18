@@ -11,7 +11,7 @@
  */
 typedef struct type
 {
-	char *type;
+	char type;
 	void (*f)();
 } arg_t;
 int sum_them_all(const unsigned int n, ...);
