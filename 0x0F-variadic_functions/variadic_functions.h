@@ -1,8 +1,5 @@
-#ifndef _VARIADIC_FUNCTIONS_H
-#define _VARIADIC_FUNCTIONS_H
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#ifndef VARIADIC_H
+#define VARIADIC_H
 /**
  * struct type - struct for input
  * arg_t - typedef for type
@@ -11,7 +8,7 @@
  */
 typedef struct type
 {
-	char type;
+	char *type;
 	void (*f)();
 } arg_t;
 int sum_them_all(const unsigned int n, ...);
