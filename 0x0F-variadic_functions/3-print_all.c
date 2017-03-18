@@ -40,10 +40,7 @@ void prnt_string(va_list va_string)
 
 	string = va_arg(va_string, char *);
 	if (string == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
+		string = "(nil)";
 	printf("%s", string);
 }
 /**
