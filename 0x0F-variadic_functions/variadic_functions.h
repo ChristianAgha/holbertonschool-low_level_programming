@@ -1,6 +1,5 @@
 #ifndef _VARIADIC_FUNCTIONS_H
 #define _VARIADIC_FUNCTIONS_H
-#define VALIDTYPE(i) (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's') 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>

@@ -50,6 +50,8 @@ void prnt_string(va_list va_string)
  */
 void print_all(const char * const format, ...)
 {
+	unsigned int i, j;
+	va_list valist;
 	arg_t frmt[] = {
 		{"c", prnt_char},
 		{"i", prnt_int},
@@ -57,8 +59,6 @@ void print_all(const char * const format, ...)
 		{"s", prnt_string},
 		{NULL, NULL}
 	};
-	unsigned int i, j;
-	va_list valist;
 
 	va_start(valist, format);
 	i = 0;
@@ -68,7 +68,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (frmt[j].type != NULL)
 		{
-			if (frmt[j].type[0] == format[i])
+			if (*frmt[j].type == format[i])
 			{
 				frmt[j].f(valist);
 				if (format[i + 1] != '\0')
