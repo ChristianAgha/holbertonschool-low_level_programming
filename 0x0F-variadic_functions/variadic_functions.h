@@ -5,8 +5,8 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 /**
- * type - struct
- *
+ * struct type - struct for input
+ * arg_t - typedef for type
  * @c: input char
  * @s: input string
  */
