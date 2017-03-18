@@ -51,6 +51,7 @@ void prnt_string(va_list va_string)
 void print_all(const char * const format, ...)
 {
 	unsigned int i, j;
+	char *separator;
 	va_list valist;
 	arg_t frmt[] = {
 		{"c", prnt_char},
@@ -63,6 +64,7 @@ void print_all(const char * const format, ...)
 	va_start(valist, format);
 
 	i = 0;
+	separator = "";
 
 	while (format && format[i] != '\0')
 	{
@@ -71,9 +73,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == frmt[j].type[0])
 			{
+				printf("%s", separator);
 				frmt[j].f(valist);
-				if (format[i + 1] != '\0')
-					printf(", ");
+				separator = ", ";
 			}
 			j++;
 		}
