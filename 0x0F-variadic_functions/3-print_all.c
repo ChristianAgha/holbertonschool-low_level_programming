@@ -59,15 +59,17 @@ void print_all(const char * const format, ...)
 		{"s", prnt_string},
 		{NULL, NULL}
 	};
+
 	va_start(valist, format);
+
 	i = 0;
 
-	while (format && format[i])
+	while (format && format[i] != '\0')
 	{
 		j = 0;
 		while (frmt[j].type != NULL)
 		{
-			if (frmt[j].type[0] == format[i])
+			if (format[i] == frmt[j].type[0])
 			{
 				frmt[j].f(valist);
 				if (format[i + 1] != '\0')
@@ -78,4 +80,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
+	va_end(valist);
 }
