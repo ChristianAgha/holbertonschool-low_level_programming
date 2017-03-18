@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
-void prnt_char(va_list va_chr);
-void prnt_int(va_list va_int);
-void prnt_float(va_list va_float);
-void prnt_string(va_list va_string);
 /**
  * print_all - prints all the inputs it's given
  * @format: a string that holds the formats key for the inputs
