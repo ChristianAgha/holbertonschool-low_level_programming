@@ -7,8 +7,7 @@
  **/
 int create_file(const char *filename, char *text_content)
 {
-	int file, length;
-	ssize_t rite;
+	int file, length, rite;
 
 	if (filename == NULL)
 		return (-1);
