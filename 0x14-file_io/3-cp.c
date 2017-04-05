@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	reed = read(file_from, buffer, 1024);
+	reed = read(file_from, buffer, 1204);
 	if (reed == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
