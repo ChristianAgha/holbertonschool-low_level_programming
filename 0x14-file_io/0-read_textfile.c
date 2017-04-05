@@ -7,9 +7,8 @@
  **/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int text_file;
+	int text_file, reed, rite;
 	char *buffer;
-	ssize_t reed, rite;
 
 	if (filename == NULL)
 		return (0);
