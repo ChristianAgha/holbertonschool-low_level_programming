@@ -8,7 +8,7 @@
 int main(int argc, char **argv)
 {
 	int file_from, file_to, reed, rite;
-	char buffer[1204];
+	char buffer[1024];
 
 	reed = 1;
 	if (argc != 3)
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	while (reed)
 	{
-		reed = read(file_from, buffer, 1204);
+		reed = read(file_from, buffer, 1024);
 		if (reed == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
