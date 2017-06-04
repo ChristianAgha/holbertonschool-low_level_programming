@@ -2,7 +2,7 @@
 /**
  * hash_djb2 - hash function reported by dan bernstein
  * @str: input string
- * Return: hash number
+ * Return: the hash number
  */
 unsigned long int hash_djb2(const unsigned char *str)
 {
