@@ -17,7 +17,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	Hashsicle->size = size;
 
-	Hashsicle->array = calloc(size, sizeof(hash_node_t*));
+	Hashsicle->array = calloc(size, sizeof(hash_node_t *));
 	if (Hashsicle->array == NULL)
 	{
 		free(Hashsicle);
