@@ -11,6 +11,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#define BUFSIZE 1024
+
 /**
  * struct hash_node_s - Node of a hash table
  *
@@ -55,4 +57,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 /* deletes a hash table */
 void hash_table_delete(hash_table_t *ht);
+/* count items in hash table */
+int count_hash_table(const hash_table_t *ht);
+
 #endif
