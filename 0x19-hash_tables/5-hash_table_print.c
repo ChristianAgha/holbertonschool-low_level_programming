@@ -6,7 +6,7 @@
  */
 int count_hash_table(const hash_table_t *ht)
 {
-	int i, items;
+	unsigned long i, items;
 	hash_node_t *tmp;
 
 	items = 0;
@@ -33,11 +33,14 @@ int count_hash_table(const hash_table_t *ht)
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	int i, items;
+	unsigned long i, items;
 	hash_node_t *tmp;
 
-	if (!ht)
+	if (ht == NULL)
+	{
+		printf("{}\n");
 		return;
+	}
 
 	items = count_hash_table(ht);
 
