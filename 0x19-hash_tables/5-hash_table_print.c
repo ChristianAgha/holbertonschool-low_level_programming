@@ -37,10 +37,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *tmp;
 
 	if (ht == NULL)
-	{
-		printf("{}\n");
 		return;
-	}
 
 	items = count_hash_table(ht);
 
