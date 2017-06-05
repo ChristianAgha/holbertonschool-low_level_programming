@@ -11,7 +11,7 @@ int count_hash_table(const hash_table_t *ht)
 
 	items = 0;
 
-	for (i = 0; i < BUFSIZE; i++)
+	for (i = 0; i < ht->size; i++)
 	{
 		tmp = ht->array[i];
 		while (tmp != NULL)
