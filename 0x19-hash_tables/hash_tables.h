@@ -43,5 +43,14 @@ typedef struct hash_table_s
 hash_table_t *hash_table_create(unsigned long int size);
 /* implements the djb2 algorithm */
 unsigned long int hash_djb2(const unsigned char *str);
-
+/* returns the index of a key */
+unsigned long int key_index(const unsigned char *key, unsigned long int size);
+/* adds an element to the hash table */
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+/* retrieves a value associated with a key */
+char *hash_table_get(const hash_table_t *ht, const char *key);
+/* prints a hash table */
+void hash_table_print(const hash_table_t *ht);
+/* deletes a hash table */
+void hash_table_delete(hash_table_t *ht);
 #endif
