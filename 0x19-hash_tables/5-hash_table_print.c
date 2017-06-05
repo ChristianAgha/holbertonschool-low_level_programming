@@ -32,13 +32,9 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long i, items;
 	hash_node_t *tmp;
 
-	if (ht == NULL)
+	if (ht == NULL || ht->array == NULL)
 		return;
-	if (ht->array == NULL)
-	{
-		printf("{}\n");
-		return;
-	}
+
 	items = count_hash_table(ht);
 
 	printf("{");
