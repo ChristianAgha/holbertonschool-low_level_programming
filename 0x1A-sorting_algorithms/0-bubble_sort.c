@@ -7,7 +7,7 @@
  */
 void swap(int *num1, int *num2)
 {
-	int temp = *num1;
+	unsigned int temp = *num1;
 	*num1 = *num2;
 	*num2 = temp;
 }
@@ -21,10 +21,7 @@ void swap(int *num1, int *num2)
 void bubble_sort(int *array, size_t size)
 {
 	unsigned int i, j;
-
-	if (!array)
-		return;
-	if (size <= 0)
+	if (!array || size <= 1)
 		return;
 
 	for (i = 0; i < size - 1; i++)
