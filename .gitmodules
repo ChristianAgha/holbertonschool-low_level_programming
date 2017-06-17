@@ -1,3 +1,6 @@
 [submodule "0x18-stacks_queues_lifo_fifo/monty"]
 	path = 0x18-stacks_queues_lifo_fifo/monty
 	url = https://github.com/glyif/monty
+[submodule "0x1A-sorting_algorithms"]
+	path = 0x1A-sorting_algorithms
+	url = https://github.com/spacexengineer/Holberton_Sorting_And_Big_O
