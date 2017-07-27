@@ -32,7 +32,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (0);
 
 	height = binary_tree_height(tree);
-
+	/*  a perfect binary tree of height h has 2^(h + 1) – 1 nodes  */
 	if (binary_tree_size(tree) == power(2, height + 1) - 1)
 		return (1);
 
